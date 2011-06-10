@@ -92,6 +92,11 @@ namespace Tamir.SharpSsh
 			m_cancelled = true;
 		}
 
+		public override void Delete(string path)
+		{
+			throw new NotImplementedException();
+		}
+
 		/// <summary>
 		/// Creates a directory on the remot server
 		/// </summary>

@@ -149,6 +149,11 @@ namespace Tamir.SharpSsh
 			return list;
 		}
 
+		public override void Delete(string path)
+		{
+			SftpChannel.rm(path);
+		}
+
 		#region ProgressMonitor Implementation
 
 		private class MyProgressMonitor : SftpProgressMonitor

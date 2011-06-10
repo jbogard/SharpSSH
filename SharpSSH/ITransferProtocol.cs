@@ -43,6 +43,7 @@ namespace Tamir.SharpSsh
 		void Get(string fromFilePath, string toFilePath);
 		void Put(string fromFilePath, string toFilePath);
 		void Mkdir(string directory);
+		void Delete(string path);
 		/// <summary>
 		/// Triggered when protocol transfer is starting
 		/// </summary>

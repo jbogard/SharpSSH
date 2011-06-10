@@ -1,0 +1,59 @@
+# .gitignore for .NET projects
+# Thanks to Derick Bailey
+# http://www.lostechies.com/blogs/derickbailey/archive/2009/05/18/a-net-c-developer-s-gitignore-file.aspx
+# Additional Thanks to 
+# - Alexey Abramov
+
+# Standard VS.NET and ReSharper Foo
+obj
+bin
+*.csproj.user
+*ReSharper*
+*resharper*
+*.suo
+*.cache
+*Thumbs.db
+
+# Stylecop things
+SourceAnalysisViolations.xml 
+*.SourceAnalysis
+
+# Other useful stuff
+*.bak
+*.cache
+*.log
+*.tmp
+*.swp
+*.user
+_compareTemp
+_notes
+aspnet_client
+httpd.parse.errors
+*.webinfo
+*.InstallLog 
+*.InstallState 
+
+# Office Temp Files
+~$* 
+
+# If you have a deploy folder
+deploy
+deploy/*
+
+# Exclude ALL compiled files?
+*.dll
+*.exe
+*.pdb
+
+# Exclude svn folders for the freaks that put a git repo in the root of an svn working copy. (git-svn hates externals...)
+.svn
+.svn/*
+
+# Exclude vss files
+*.*scc
+
+# SQL Server managment studio stuff
+*.sqlsuo
+
+# Visual Basic 6 excludes
+*.vbw
