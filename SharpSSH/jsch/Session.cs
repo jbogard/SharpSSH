@@ -543,6 +543,9 @@ namespace Tamir.SharpSsh.jsch
 			// String    languages_server_to_client
 			packet.reset();
 			buf.putByte((byte) SSH_MSG_KEXINIT);
+
+            if(random == null) random=new jce.Random();
+
 			lock(random)
 			{
 				random.fill(buf.buffer, buf.index, 16); buf.skip(16);
