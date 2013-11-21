@@ -66,7 +66,7 @@ namespace sharpSshTest
 			{
 				PrintVersoin();
 				Console.WriteLine();
-				Console.WriteLine("JSch Smaples:");
+				Console.WriteLine("JSch Samples:");
 				Console.WriteLine("=============");
 				Console.WriteLine("{0})\tShell.cs",				JSCH_SHELL);
 				Console.WriteLine("{0})\tAES.cs",				JSCH_AES);
@@ -81,7 +81,7 @@ namespace sharpSshTest
 				Console.WriteLine("{0})\tSubsystem.cs",	JSCH_STREAM_SUBSYSTEM);
 				Console.WriteLine("{0})\tViaHTTP.cs",			JSCH_VIA_HTTP);
 				Console.WriteLine();
-				Console.WriteLine("SharpSSH Smaples:");
+				Console.WriteLine("SharpSSH Samples:");
 				Console.WriteLine("=================");
 				Console.WriteLine("{0})\tSSH Shell sample",		SHARP_SHELL);
 				Console.WriteLine("{0})\tSSH Expect Sample",	SHARP_EXPECT);
