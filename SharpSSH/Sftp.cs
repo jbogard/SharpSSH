@@ -1,6 +1,7 @@
 using System;
 using Tamir.SharpSsh.jsch;
 using System.Collections;
+using System.Threading.Tasks;
 
 /* 
  * Sftp.cs
@@ -74,12 +75,12 @@ namespace Tamir.SharpSsh
 
 		//Get
 
-		public void Get(string fromFilePath)
+        public async void Get(string fromFilePath)
 		{
 			Get(fromFilePath, ".");
 		}
 
-		public void Get(string[] fromFilePaths)
+        public async void Get(string[] fromFilePaths)
 		{
 			for (int i = 0; i < fromFilePaths.Length; i++)
 			{
@@ -87,7 +88,7 @@ namespace Tamir.SharpSsh
 			}
 		}
 
-		public void Get(string[] fromFilePaths, string toDirPath)
+        public async void Get(string[] fromFilePaths, string toDirPath)
 		{
 			for (int i = 0; i < fromFilePaths.Length; i++)
 			{
@@ -95,7 +96,7 @@ namespace Tamir.SharpSsh
 			}
 		}
 
-		public override void Get(string fromFilePath, string toFilePath)
+        public override async void Get(string fromFilePath, string toFilePath)
 		{
 			cancelled=false;
 			SftpChannel.get(fromFilePath, toFilePath, m_monitor, ChannelSftp.OVERWRITE);
@@ -103,12 +104,12 @@ namespace Tamir.SharpSsh
 
 		//Put
 
-		public void Put(string fromFilePath)
+        public async void Put(string fromFilePath)
 		{
 			Put(fromFilePath, ".");
 		}
 
-		public void Put(string[] fromFilePaths)
+        public async void Put(string[] fromFilePaths)
 		{
 			for (int i = 0; i < fromFilePaths.Length; i++)
 			{
@@ -116,7 +117,7 @@ namespace Tamir.SharpSsh
 			}
 		}
 
-		public void Put(string[] fromFilePaths, string toDirPath)
+        public async void Put(string[] fromFilePaths, string toDirPath)
 		{
 			for (int i = 0; i < fromFilePaths.Length; i++)
 			{
@@ -124,7 +125,7 @@ namespace Tamir.SharpSsh
 			}
 		}
 
-		public override void Put(string fromFilePath, string toFilePath)
+        public override async void Put(string fromFilePath, string toFilePath)
 		{
 			cancelled=false;
 			SftpChannel.put(fromFilePath, toFilePath, m_monitor, ChannelSftp.OVERWRITE);
@@ -132,14 +133,14 @@ namespace Tamir.SharpSsh
 
 		//MkDir
 
-		public override  void Mkdir(string directory)
+        public override async void Mkdir(string directory)
 		{
 			SftpChannel.mkdir(directory);
 		}
 
 		//Ls
 
-		public ArrayList GetFileList(string path)
+        public async Task<ArrayList> GetFileList(string path)
 		{
 			ArrayList list = new ArrayList();
 			foreach(Tamir.SharpSsh.jsch.ChannelSftp.LsEntry entry in SftpChannel.ls(path))
@@ -149,7 +150,7 @@ namespace Tamir.SharpSsh
 			return list;
 		}
 
-		public override void Delete(string path)
+		public override async void Delete(string path)
 		{
 			SftpChannel.rm(path);
 		}
