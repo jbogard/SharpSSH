@@ -1591,7 +1591,7 @@ namespace Tamir.SharpSsh.jsch
 				throw new SftpException(SSH_FX_FAILURE, "");
 			}
 		}
-		public void rm(String path)
+		public async void rm(String path)
 		{
 			//throws SftpException{
 			try
